@@ -2,22 +2,7 @@
 <!-- -->
 let calls_row = {speaker1: 'Sally', speaker2: 'Rep Joe'};
 %>
-<form action="/calls" method="post">
 
-  <div class="form-group">
-    <label for="speaker1"><%= calls_row.speaker1 %></label>
-    <input type="text" class="form-control" placeholder="enter name" id="speaker1" name="speaker1">
-  </div>
-
-  <div class="form-group">
-    <label for="speaker2"><%= calls_row.speaker2 %></label>
-    <input type="text" class="form-control" placeholder="enter name" id="speaker2" name="speaker2">
-  </div>
-
-  <button class="btn btn-primary" type="submit">Update Speakers</button>
-
-</form>
-<br><br>
 <%
 let messages = [
   {
@@ -43,6 +28,25 @@ let messages = [
 ]
 %>
 
+<div class="backdrop-column">
+<br>
+<form action="/calls" method="post">
+
+  <div class="form-group">
+    <label for="speaker1"><%= calls_row.speaker1 %></label>
+    <input type="text" class="form-control" placeholder="enter name" id="speaker1" name="speaker1">
+  </div>
+
+  <div class="form-group">
+    <label for="speaker2"><%= calls_row.speaker2 %></label>
+    <input type="text" class="form-control" placeholder="enter name" id="speaker2" name="speaker2">
+  </div>
+
+  <button class="btn btn-primary" type="submit">Update Speakers</button>
+
+</form>
+
+<br>
 <form action="/update-individual-call" method="post">
 <% for (let i = 0; i<messages.length; i++) { %>
   <div class="form-group">
@@ -53,6 +57,7 @@ let messages = [
   <button class="btn btn-primary" type="submit">Update Conversation</button>
 
 </form>
+</div>
 <!--
 - calls details page: show will have 2 functions:
 1) update speaker name on save

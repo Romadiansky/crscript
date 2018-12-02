@@ -25,3 +25,6 @@ $.fn.extend({
   },
 });
 
+$(document).ready(function() {
+  $.backstretch("/images/wide.jpg");
+});

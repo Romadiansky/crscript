@@ -20,3 +20,61 @@ body {
   top: 35%;
   font-size: 2.4em;
 }
+
+
+.backdrop {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
+  background-color: #eee;
+  padding: 50px;
+  width: 650px;
+  height: 350px;
+}
+
+.backdrop-column {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #eee;
+  padding: 0 50px;
+  width: 650px;
+}
+.backdrop-column label {
+  min-width: 70px;
+  color: black;
+}
+
+h1 {
+  font-size: 5rem;
+  color: black;
+}
+h6 {
+  font-size: 2rem;
+  color: black;
+}
+
+a {
+  font-size: 18px;
+  color: black;
+}
+
+textarea {
+  width: 250px;
+  border-radius: 15px;
+  padding:10px;
+  border: 1px dashed;
+  margin: 10px 0;
+  resize: none;
+}
+
+th, td {
+  color: black;
+}
