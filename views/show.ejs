@@ -1,0 +1,40 @@
+<form action="/calls" method="post">
+
+  <div class="form-group">
+    <label for="speaker1">Speaker 1</label>
+    <input type="text" class="form-control" placeholder="enter name" id="speaker1" name="speaker1">
+  </div>
+
+  <div class="form-group">
+    <label for="speaker2">Speaker 2</label>
+    <input type="text" class="form-control" placeholder="enter name" id="speaker2" name="speaker2">
+  </div>
+
+  <button class="btn btn-primary" type="submit">Update Speakers</button>
+
+</form>
+
+<% for (let i = 0; i<5; i++) { %>
+
+
+  <div class="form-group">
+    <label for="transcript"></label>
+    <textarea class="form-control" rows="8"></textarea>
+  </div>
+
+<% } %>
+
+<!--
+- calls details page: show will have 2 functions:
+1) update speaker name on save
+2) show / allow for editing of conversation
+  a) sort through the array by ID (incrementing) (or get a sorted array)
+  b) loop through the array and build the interface as you go, so for each iteration, show a label (e.g. rep: Bob) and a text area with that segment of the conversation in it
+
+
+- transcript will be provided from server
+- Watson file will be transcribed for us by Speaker
+- always 2 speakers; prerecorded and preparsed
+- change the callers from speaker1 and speaker2 to customer name and rep name
+- proof of concept: edit speakers
+- later, we *would* also allow editing of text, but now -->
