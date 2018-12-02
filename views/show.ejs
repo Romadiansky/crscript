@@ -1,29 +1,58 @@
+<%
+<!-- -->
+let calls_row = {speaker1: 'Sally', speaker2: 'Rep Joe'};
+%>
 <form action="/calls" method="post">
 
   <div class="form-group">
-    <label for="speaker1">Speaker 1</label>
+    <label for="speaker1"><%= calls_row.speaker1 %></label>
     <input type="text" class="form-control" placeholder="enter name" id="speaker1" name="speaker1">
   </div>
 
   <div class="form-group">
-    <label for="speaker2">Speaker 2</label>
+    <label for="speaker2"><%= calls_row.speaker2 %></label>
     <input type="text" class="form-control" placeholder="enter name" id="speaker2" name="speaker2">
   </div>
 
   <button class="btn btn-primary" type="submit">Update Speakers</button>
 
 </form>
+<br><br>
+<%
+let messages = [
+  {
+    "id": "1",
+    "speaker": 1,
+    "body": "My name is Bob and my phone number is 666-555-4444."
+  },
+  {
+    "id": "2",
+    "speaker": 2,
+    "body": "I don't care what your name is."
+  },
+  {
+    "id": "3",
+    "speaker": 1,
+    "body": "I need eggs."
+  },
+  {
+    "id": "4",
+    "speaker": 2,
+    "body": "I have arranged to send 300 eggs. Good bye."
+  }
+]
+%>
 
-<% for (let i = 0; i<5; i++) { %>
-
-
+<form action="/update-individual-call" method="post">
+<% for (let i = 0; i<messages.length; i++) { %>
   <div class="form-group">
-    <label for="transcript"></label>
-    <textarea class="form-control" rows="8"></textarea>
+    <label for="transcript-<%= messages[i].id %>"><%= messages[i].speaker === 1 ? calls_row.speaker1 : calls_row.speaker2 %></label>
+    <textarea class="form-control" rows="8" id="transcript-<%= messages[i].id %>" name="transcript-<%= messages[i].id %>"><%= messages[i].body %></textarea>
   </div>
-
 <% } %>
+  <button class="btn btn-primary" type="submit">Update Conversation</button>
 
+</form>
 <!--
 - calls details page: show will have 2 functions:
 1) update speaker name on save

@@ -25,15 +25,3 @@ $.fn.extend({
   },
 });
 
-let transcript_arr = [
-  {
-    "id": "1",
-    "speaker": 1,
-    "body": "text customer said"
-  },
-  {
-    "id": "2",
-    "speaker": 2,
-    "body": "text rep said"
-  }
-]
